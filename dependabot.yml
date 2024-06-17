@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+      time: '07:00'
+      timezone: 'Europe/Brussels'
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+      time: '07:00'
+      timezone: 'Europe/Brussels'
+    versioning-strategy: increase
+    groups:
+      mui:
+        patterns:
+          - '@mui/*'
+      tanstack-query:
+        patterns:
+          - '@tanstack/react-query*'
+          - '@tanstack/query*'
+      tiptap:
+        patterns:
+          - '@tiptap/*'
+      commitlint:
+        patterns:
+          - '@commitlint/*'
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
+      types:
+        patterns:
+          - '@types/*'
